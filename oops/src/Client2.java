@@ -20,19 +20,19 @@ public class Client2 {
 //        int x = 10;
 //        add(x);
 //        System.out.println(x);
-
-        Driver d = new Driver("ABC");
-        changeName(d);
-        System.out.println(d.name);
+//
+//        Driver d = new Driver("ABC");
+//        changeName(d);
+//        System.out.println(d.name);
     }
-
-    public static void add(int x) {
-        x = x+30;
-    }
-
-    public static void changeName(Driver driver) {
-        driver.name = "XYZ";
-        driver = null;
-        driver.name = "ABC";
-    }
+//
+//    public static void add(int x) {
+//        x = x+30;
+//    }
+//
+//    public static void changeName(Driver driver) {
+//        driver.name = "XYZ";
+//        driver = null;
+//        driver.name = "ABC";
+//    }
 }
