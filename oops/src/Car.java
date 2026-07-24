@@ -12,4 +12,8 @@ public class Car extends Vehicle{
         System.out.println("Car constrcutor caled");
         this.musicSystem = musicSystem;
     }
+
+    public double calculateFare(int km) {
+        return 10.0*km;
+    }
 }

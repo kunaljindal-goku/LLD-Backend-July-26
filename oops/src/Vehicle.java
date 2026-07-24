@@ -32,4 +32,8 @@ public class Vehicle {
         this.fuel += fuel;
         System.out.println("Fuel is refilled upto "+fuel);
     }
+
+    public double calculateFare(int km) {
+        return 1.0*km;
+    }
 }
