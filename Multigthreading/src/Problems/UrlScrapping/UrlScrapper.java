@@ -13,6 +13,7 @@ public class UrlScrapper implements Callable<Void> {
     @Override
     public Void call() throws Exception {
         Thread.sleep(200);
+//        System.out.println(url);
         return null;
     }
 }
