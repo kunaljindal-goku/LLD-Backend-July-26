@@ -2,11 +2,14 @@ package ProducerConsumer;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.locks.Lock;
+import java.util.concurrent.locks.ReentrantLock;
 
 public class Store {
 
     private int maxSize;
     private List<Object> items;
+    private Lock lock = new ReentrantLock();
 
     public Store(int maxSize) {
         this.maxSize = maxSize;
@@ -29,17 +32,17 @@ public class Store {
         this.items = items;
     }
 
-    public synchronized void addItem(Object item) {
-        if(this.items.size() < maxSize) {
-            items.add(item);
-            System.out.println("Producer has added an item. Size of items: "+items.size());
-        }
+    public void addItem(Object item) {
+        lock.lock();
+        items.add(item);  // O(1)
+        System.out.println("Producer has added an item. Size of items: " + items.size());
+        lock.unlock();
     }
 
-    public synchronized void removeItem() {
-        if(items.size() > 0) {
-            items.remove(items.size()-1);
-            System.out.println("Consumer has consume. Size of items: "+items.size());
-        }
+    public void removeItem() {
+        lock.lock();
+        items.remove(items.size() - 1);
+        System.out.println("Consumer has consume. Size of items: " + items.size());
+        lock.unlock();
     }
 }
