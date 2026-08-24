@@ -8,13 +8,18 @@ public class Client {
     }
 
     public static void main(String[] args) {
-        Dove dove = new Dove("Dove",10,"white");
-        makeBirdFly(dove);
+        Dove dove = new Dove("Dove",10,"white", new HighFlyingBird());
+//        makeBirdFly(dove);
+//
+//        Pigeon pigeon = new Pigeon("Pigeon",10,"white");
+//        makeBirdFly(pigeon);
+//
+//        Penguin penguin = new Penguin("Pigeon",10,"white");
+//        makeBirdFly(penguin);
 
-        Pigeon pigeon = new Pigeon("Pigeon",10,"white");
-        makeBirdFly(pigeon);
+        dove.fly();
 
-        Penguin penguin = new Penguin("Pigeon",10,"white");
-        makeBirdFly(penguin);
+        Dove d1 = new Dove("Dove",10,"white", new LowFlyingBird());
+        d1.fly();
     }
 }
