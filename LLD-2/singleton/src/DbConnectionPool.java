@@ -8,7 +8,10 @@ public class DbConnectionPool {
     private List<String> connections;
     private int maxPoolSize;
 
-    //    private static final DbConnectionPool instance = new DbConnectionPool("url", "pass", 5);
+    /**
+     * Eager intialized singleton
+     */
+      //   private static final DbConnectionPool instance = new DbConnectionPool("url", "pass", 5);
     private static DbConnectionPool instance;
 
     private DbConnectionPool(String url, String password, int maxPoolSize) {
@@ -18,6 +21,10 @@ public class DbConnectionPool {
         this.connections = new ArrayList<>(maxPoolSize);
     }
 
+    /**
+     * Double checked locking
+     * @return
+     */
     public static DbConnectionPool getInstance() {
         if (instance == null) {
             synchronized (DbConnectionPool.class) {
@@ -29,10 +36,7 @@ public class DbConnectionPool {
         return instance;
     }
 
-//    public static void sayHello() {
-//        System.out.println("HEllo");
-//    }
-//
+
 //    public static DbConnectionPool getInstance() {
 //        return instance;
 //    }

@@ -11,6 +11,10 @@ public class Client {
 //        DbConnectionPool.sayHello();
 
 
+        DbConnectionPool pool1 = DbConnectionPool.getInstance();
+        pool1.setMaxPoolSize(10);
+
+
 
 
 
