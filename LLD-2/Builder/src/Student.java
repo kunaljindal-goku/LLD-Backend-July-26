@@ -118,9 +118,7 @@ public class Student {
 //    }
 
     private Student(Builder builder) {
-        if(builder.psp < 90) {
-            throw new RuntimeException("Invalid psp");
-        }
+       // super(builder.s);
         this.gradYear = builder.getGradYear();
         this.name = builder.getName();
     }
@@ -217,7 +215,6 @@ public class Student {
             if (this.gradYear < 2022) {
                 throw new RuntimeException("Grad year has to be greater than 2022");
             }
-
         }
     }
 }
