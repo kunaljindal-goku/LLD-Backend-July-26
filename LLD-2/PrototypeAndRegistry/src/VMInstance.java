@@ -1,0 +1,61 @@
+public class VMInstance implements Prototype<VMInstance>{
+
+    private String os;
+    private String runtime;
+    private String monitoringAgent;
+    private String hostname;
+    private String ipAddress;
+
+    public VMInstance(String os,
+                      String runtime,
+                      String monitoringAgent,
+                      String hostname,
+                      String ipAddress) {
+        this.os = os;
+        this.runtime = runtime;
+        this.monitoringAgent = monitoringAgent;
+        this.hostname = hostname;
+        this.ipAddress = ipAddress;
+    }
+
+    public VMInstance(VMInstance other) {
+        this.hostname = other.hostname;
+        this.monitoringAgent = other.monitoringAgent;
+        this.runtime = other.runtime;
+        this.ipAddress = other.ipAddress;
+        this.os = other.os;
+    }
+
+    public void setHostname(String hostname) {
+        this.hostname = hostname;
+    }
+
+    public void setIpAddress(String ipAddress) {
+        this.ipAddress = ipAddress;
+    }
+
+    public String getHostname() {
+        return hostname;
+    }
+
+    public String getIpAddress() {
+        return ipAddress;
+    }
+
+    public String getOs() {
+        return os;
+    }
+
+    public String getRuntime() {
+        return runtime;
+    }
+
+    public String getMonitoringAgent() {
+        return monitoringAgent;
+    }
+
+    @Override
+    public VMInstance clone() {
+        return new VMInstance(this);
+    }
+}
