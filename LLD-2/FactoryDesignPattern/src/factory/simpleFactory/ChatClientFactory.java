@@ -1,10 +1,10 @@
-package factory;
+package factory.simpleFactory;
 
 import chatClients.AiChatClient;
 import chatClients.AnthropicChatClient;
 import chatClients.OpenAiChatClient;
 
-public class AiChatClientFactory {
+public class ChatClientFactory {
 
     // simple factory method
     public static AiChatClient getAiChatClient(String providerName) {

@@ -1,6 +1,6 @@
 package factory;
 
-public class AiClientFactoryProvider {
+public class ClientFactoryProvider {
 
     public static AiClientFactory getAiClientFatory(String provider) {
         if(provider.equals("openai")) {
@@ -9,7 +9,6 @@ public class AiClientFactoryProvider {
         else if(provider.equals("anthropic")) {
             return new AnthropicClientFactory();
         }
-
         return null;
     }
 }

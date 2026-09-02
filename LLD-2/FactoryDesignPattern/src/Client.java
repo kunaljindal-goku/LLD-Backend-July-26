@@ -8,7 +8,7 @@ public class Client {
         System.out.println("Please select the provider");
         String providerName = sc.next();
 
-        ChatService chatService = new ChatService(providerName);
+        ChatService chatService = new ChatService();
 
 
         System.out.println("Please give the prompt");
