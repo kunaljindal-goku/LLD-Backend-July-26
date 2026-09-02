@@ -35,17 +35,23 @@ public class Client {
         VMInstanceRegistry vmInstanceRegistry = new VMInstanceRegistry();
         fillRegistry(vmInstanceRegistry);
 
-        VMInstance kunalIntance = vmInstanceRegistry.getVmInstance("backend-server-v3");
-        kunalIntance.setHostname("scaler.com");
-        kunalIntance.setIpAddress("123.11.11.11");
+//        VMInstance kunalIntance = vmInstanceRegistry.getVmInstance("backend-server-v3");
+//        kunalIntance.setHostname("scaler.com");
+//        kunalIntance.setIpAddress("123.11.11.11");
 
         VMInstance armaanInstance = vmInstanceRegistry.getVmInstance("gpu-instance-v2");
-        armaanInstance.setHostname("wdqd");
+        armaanInstance.setHostname("instagram.com");
         armaanInstance.setIpAddress("2324");
 
-        VMInstance macInsatnce = new VMInstance("MacOs 19.23","Docker 1.2","Datadog",null,null);
-        vmInstanceRegistry.addVmInstance("mac-server-v1",macInsatnce);
+        VMInstance kunalInstance = vmInstanceRegistry.getVmInstance("gpu-instance-v2");
+        kunalInstance.setHostname("scaler.com");
 
         System.out.println("DEBUG");
+
+
+//        VMInstance macInsatnce = new VMInstance("MacOs 19.23","Docker 1.2","Datadog",null,null);
+//        vmInstanceRegistry.addVmInstance("mac-server-v1",macInsatnce);
+//
+//        System.out.println("DEBUG");
     }
 }

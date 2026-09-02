@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class VMInstance implements Prototype<VMInstance>{
 
     private String os;
@@ -5,6 +8,7 @@ public class VMInstance implements Prototype<VMInstance>{
     private String monitoringAgent;
     private String hostname;
     private String ipAddress;
+    private List<String> installedInstances;
 
     public VMInstance(String os,
                       String runtime,
@@ -24,6 +28,7 @@ public class VMInstance implements Prototype<VMInstance>{
         this.runtime = other.runtime;
         this.ipAddress = other.ipAddress;
         this.os = other.os;
+        this.installedInstances = new ArrayList<>(other.installedInstances); // shallow copy
     }
 
     public void setHostname(String hostname) {
