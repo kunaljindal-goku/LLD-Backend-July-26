@@ -1,4 +1,4 @@
-public abstract class Condiment {
+public abstract class Condiment implements Coffee{
 
     protected Coffee coffee;
 
