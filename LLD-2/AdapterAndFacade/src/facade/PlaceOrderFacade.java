@@ -11,7 +11,6 @@ public class PlaceOrderFacade {
         this.invoiceService = new InvoiceService();
     }
 
-
     public void placeOrder(Order order) {
         try {
             inventoryService.updateInventory(order);
