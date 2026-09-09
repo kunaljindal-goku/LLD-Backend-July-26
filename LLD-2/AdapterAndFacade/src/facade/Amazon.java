@@ -14,4 +14,12 @@ public class Amazon {
         Order order = new Order(String.valueOf(UUID.randomUUID()),itemId,quantity);
        placeOrderFacade.placeOrder(order);
    }
+
+    public PlaceOrderFacade getPlaceOrderFacade() {
+        return placeOrderFacade;
+    }
+
+    public void setPlaceOrderFacade(PlaceOrderFacade placeOrderFacade) {
+        this.placeOrderFacade = placeOrderFacade;
+    }
 }
